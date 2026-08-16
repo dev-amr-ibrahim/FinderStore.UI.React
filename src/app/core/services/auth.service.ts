@@ -28,7 +28,7 @@ class AuthServiceClass {
 
   async register(request: RegisterRequest) {
     const response = await apiService.post<LoginResponse>(
-      `${ApiConstants.BaseUrl}${ApiConstants.Register}`,
+      `${ApiConstants.Register}`,
       request
     );
     this.saveSession(response);
