@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiUrl: 'https://localhost:7001/api'
+  production: import.meta.env.PROD,
+  apiUrl: import.meta.env.VITE_API_BASE_URL,
 };
