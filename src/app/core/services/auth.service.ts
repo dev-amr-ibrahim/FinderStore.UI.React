@@ -19,7 +19,7 @@ class AuthServiceClass {
 
   async login(request: { email: string; password: string }) {
     const response = await apiService.post<LoginResponse>(
-      `${ApiConstants.BaseUrl}${ApiConstants.Login}`,
+      `${ApiConstants.Login}`,
       request
     );
     this.saveSession(response);
@@ -37,7 +37,7 @@ class AuthServiceClass {
 
   async updateProfile(request: UpdateProfileRequest) {
     const user = await apiService.post<UserInfo>(
-      `${ApiConstants.BaseUrl}${ApiConstants.UpdateProfile}`,
+      `${ApiConstants.UpdateProfile}`,
       request
     );
     this.updateStoredUser(user);

@@ -4,7 +4,7 @@ import type { ProfileDto } from '../models/profile-dto';
 
 export class CustomerService {
   async getUserProfile() {
-    return apiService.get<ProfileDto>(`${ApiConstants.BaseUrl}${ApiConstants.GetUserProfile}`);
+    return apiService.get<ProfileDto>(`${ApiConstants.GetUserProfile}`);
   }
 }
 

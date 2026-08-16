@@ -44,8 +44,8 @@ export function Profile() {
       });
       setAddresses(
         profileData.addresses.map((addr) => ({
-          label: 'Home',
-          recipient: '',
+          label: addr.label || 'Home',
+          recipient: addr.recipient || profileData.fullName,
           line1: addr.line1,
           line2: addr.line2,
           city: addr.city,
@@ -54,7 +54,7 @@ export function Profile() {
           country: addr.country,
         }))
       );
-      if (addresses.length === 0) {
+      if (!profileData.addresses || profileData.addresses.length === 0) {
         addAddress();
       }
     }).catch((error) => {
@@ -99,6 +99,7 @@ export function Profile() {
       (a) => !a.label || !a.recipient || !a.line1 || !a.city || !a.country
     );
     if (!profile.name || !profile.email || !profile.phone1 || hasEmptyRequired) {
+      console.log(profile.name  + " "  +profile.email+ " "  + profile.phone1 + " "  + hasEmptyRequired);
       setSubmitError('Please correct the highlighted fields and try again.');
       return;
     }
