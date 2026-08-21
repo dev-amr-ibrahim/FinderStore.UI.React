@@ -15,7 +15,7 @@ export function ProductList() {
   useEffect(() => {
     if (routeParams.id) {
       setCategoryId(routeParams.id);
-      loadProductsByCategory(Number(routeParams.id));
+      loadProductsByCategory(routeParams.id);
     } else {
       loadAllProducts();
     }
@@ -33,7 +33,7 @@ export function ProductList() {
     });
   };
 
-  const loadProductsByCategory = (catId: number) => {
+  const loadProductsByCategory = (catId: string) => {
     productService.getProducts().subscribe({
       next: (prods: Product[]) => {
         const filtered = prods.filter((p: Product) => p.category.id === catId);
@@ -69,7 +69,7 @@ export function ProductList() {
   const filterByCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     if (value) {
-      loadProductsByCategory(Number(value));
+      loadProductsByCategory(value);
       setCategoryId(value);
     } else {
       setCategoryId(null);
