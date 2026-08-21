@@ -38,12 +38,12 @@ export interface VariantOption {
 }
 
 export interface Category {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   description: string;
   image: string;
-  parentId?: number;
+  parentId?: string;
   children?: Category[];
 }
 

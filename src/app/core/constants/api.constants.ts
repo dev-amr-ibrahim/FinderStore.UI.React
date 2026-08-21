@@ -6,5 +6,6 @@ export const ApiConstants = {
     GetUserProfile: 'auth/GetUserProfile',
     Refresh: 'auth/refresh',
     Logout: 'auth/logout',
-    Products: 'products'
+    Products: 'products',
+    createProduct: 'admin/products',
 } as const;

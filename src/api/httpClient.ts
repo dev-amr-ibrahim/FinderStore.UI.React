@@ -1,4 +1,4 @@
-import axios, {type AxiosInstance } from "axios";
+import axios, { type AxiosInstance } from "axios";
 
 import registerRequestInterceptor from "./interceptors/requestInterceptor";
 import registerResponseInterceptor from "./interceptors/responseInterceptor";
