@@ -4,6 +4,7 @@ import { AuthLayout } from './app/layouts/auth-layout/auth-layout';
 import { Home } from './app/features/home/home';
 import { ProductList } from './app/features/products/product-list/product-list';
 import { ProductDetail } from './app/features/products/product-detail/product-detail';
+import { CreateProduct } from './app/features/products/create-product/create-product';
 import { Categories } from './app/features/categories/categories';
 import { Cart } from './app/features/cart/cart';
 import { Checkout } from './app/features/checkout/checkout';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<ProductList />} />
+          <Route path="products/create" element={<ProtectedRoute><CreateProduct /></ProtectedRoute>} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="categories" element={<Categories />} />
           <Route path="categories/:id" element={<ProductList />} />

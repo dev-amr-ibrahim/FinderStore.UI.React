@@ -1,10 +1,14 @@
+import { environment } from '../../../environments/environment';
+const baseUrl = environment.apiUrl;
+
 export const ApiConstants = {
-    BaseUrl: 'https://localhost:7001/api/',
+    BaseUrl: baseUrl,
     Login: 'auth/login',
     Register: 'auth/register',
     UpdateProfile: 'auth/update-profile',
     GetUserProfile: 'auth/GetUserProfile',
     Refresh: 'auth/refresh',
     Logout: 'auth/logout',
-    Products: 'products'
+    Products: 'products',
+    createProduct: 'admin/products',
 } as const;

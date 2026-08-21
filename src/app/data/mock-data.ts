@@ -2,42 +2,42 @@ import { Product, Category } from '../core/interfaces/product.interface';
 
 export const mockCategories: Category[] = [
   {
-    id: 1,
+    id: '7AC51689-7F64-4369-8D53-C52E22F58FDF',
     name: 'Electronics',
     slug: 'electronics',
     description: 'Latest gadgets and devices',
     image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400'
   },
   {
-    id: 2,
+    id:"1",
     name: 'Fashion',
     slug: 'fashion',
     description: 'Trendy clothing and accessories',
     image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400'
   },
   {
-    id: 3,
+    id: '3',
     name: 'Home & Living',
     slug: 'home-living',
     description: 'Beautiful home decor',
     image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400'
   },
   {
-    id: 4,
+    id: '4',
     name: 'Beauty',
     slug: 'beauty',
     description: 'Premium beauty products',
     image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400'
   },
   {
-    id: 5,
+    id: '5',
     name: 'Sports',
     slug: 'sports',
     description: 'Sports equipment and gear',
     image: 'https://images.unsplash.com/photo-1461896836934-bd45ba220cf4?w=400'
   },
   {
-    id: 6,
+    id: '6',
     name: 'Books',
     slug: 'books',
     description: 'Best-selling books',
@@ -56,7 +56,7 @@ export const mockProducts: Product[] = [
       { id: 1, url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600', alt: 'Wireless Headphones', isPrimary: true },
       { id: 2, url: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600', alt: 'Headphones Side View', isPrimary: false }
     ],
-    category: { id: 1, name: 'Electronics', slug: 'electronics', description: '', image: '' },
+    category: { id: '1', name: 'Electronics', slug: 'electronics', description: '', image: '' },
     tags: ['wireless', 'audio', 'premium'],
     variants: [
       {
@@ -86,7 +86,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600', alt: 'Minimalist Watch', isPrimary: true }
     ],
-    category: { id: 2, name: 'Fashion', slug: 'fashion', description: '', image: '' },
+    category: { id:"1", name: 'Fashion', slug: 'fashion', description: '', image: '' },
     tags: ['watch', 'accessories', 'minimalist'],
     variants: [
       {
@@ -114,7 +114,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1589003077984-894e133dabab?w=600', alt: 'Smart Speaker', isPrimary: true }
     ],
-    category: { id: 1, name: 'Electronics', slug: 'electronics', description: '', image: '' },
+    category: { id: '1', name: 'Electronics', slug: 'electronics', description: '', image: '' },
     tags: ['smart home', 'audio', 'voice control'],
     variants: [
       {
@@ -143,7 +143,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600', alt: 'Leather Backpack', isPrimary: true }
     ],
-    category: { id: 2, name: 'Fashion', slug: 'fashion', description: '', image: '' },
+    category: { id:"1", name: 'Fashion', slug: 'fashion', description: '', image: '' },
     tags: ['leather', 'bag', 'travel'],
     variants: [
       {
@@ -172,7 +172,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600', alt: 'Silk Scarf', isPrimary: true }
     ],
-    category: { id: 2, name: 'Fashion', slug: 'fashion', description: '', image: '' },
+    category: { id:"1", name: 'Fashion', slug: 'fashion', description: '', image: '' },
     tags: ['silk', 'accessories', 'handmade'],
     variants: [
       {
@@ -201,7 +201,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600', alt: 'Ceramic Tea Set', isPrimary: true }
     ],
-    category: { id: 3, name: 'Home & Living', slug: 'home-living', description: '', image: '' },
+    category: { id:"1", name: 'Home & Living', slug: 'home-living', description: '', image: '' },
     tags: ['ceramic', 'kitchen', 'handmade'],
     variants: [],
     rating: 4.8,
@@ -221,7 +221,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1570194065650-d99fb4ee89d7?w=600', alt: 'Face Serum', isPrimary: true }
     ],
-    category: { id: 4, name: 'Beauty', slug: 'beauty', description: '', image: '' },
+    category: { id:"4", name: 'Beauty', slug: 'beauty', description: '', image: '' },
     tags: ['organic', 'skincare', 'beauty'],
     variants: [],
     rating: 4.7,
@@ -240,7 +240,7 @@ export const mockProducts: Product[] = [
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=600', alt: 'Yoga Mat', isPrimary: true }
     ],
-    category: { id: 5, name: 'Sports', slug: 'sports', description: '', image: '' },
+    category: { id:"5", name: 'Sports', slug: 'sports', description: '', image: '' },
     tags: ['yoga', 'fitness', 'eco-friendly'],
     variants: [
       {

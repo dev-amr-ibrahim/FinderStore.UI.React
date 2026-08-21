@@ -1,4 +1,4 @@
-import axios, { type AxiosRequestConfig } from 'axios';
+import { type AxiosRequestConfig } from 'axios';
 import { environment } from '../../../environments/environment';
 import httpClient from "../../../api/httpClient";
 const baseUrl = environment.apiUrl;
