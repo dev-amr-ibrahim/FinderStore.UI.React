@@ -49,7 +49,9 @@ export const mockProducts: Product[] = [
   {
     id: 1,
     name: 'Premium Wireless Headphones',
+    nameAr: 'سماعات لاسلكية فاخرة',
     description: 'Experience crystal-clear audio with our premium wireless headphones. Features active noise cancellation, 30-hour battery life, and premium comfort.',
+    descriptionAr: 'استمتع بصوت واضح ونقي مع سماعاتنا اللاسلكية الفاخرة، التي تتميز بإلغاء الضوضاء النشط وبطارية تدوم 30 ساعة وراحة فائقة.',
     price: 299.99,
     compareAtPrice: 349.99,
     images: [
@@ -71,6 +73,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.8,
     reviewCount: 2456,
+    stockQuantity: 42,
     inStock: true,
     sku: 'WH-001',
     featured: true,
@@ -80,7 +83,9 @@ export const mockProducts: Product[] = [
   {
     id: 2,
     name: 'Minimalist Watch',
+    nameAr: 'ساعة بتصميم بسيط',
     description: 'Elegant minimalist watch with genuine leather strap, sapphire crystal glass, and Japanese quartz movement.',
+    descriptionAr: 'ساعة أنيقة بتصميم بسيط، مزودة بسوار من الجلد الطبيعي وزجاج كريستال الياقوت وحركة كوارتز يابانية.',
     price: 199.99,
     compareAtPrice: 249.99,
     images: [
@@ -100,6 +105,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.9,
     reviewCount: 1234,
+    stockQuantity: 18,
     inStock: true,
     sku: 'MW-002',
     featured: true,
@@ -109,7 +115,9 @@ export const mockProducts: Product[] = [
   {
     id: 3,
     name: 'Smart Home Speaker',
+    nameAr: 'مكبر صوت منزلي ذكي',
     description: 'Voice-controlled smart speaker with premium sound quality, smart home integration, and elegant design.',
+    descriptionAr: 'مكبر صوت ذكي يتم التحكم فيه صوتياً، بجودة صوت فائقة وتكامل مع المنزل الذكي وتصميم أنيق.',
     price: 149.99,
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1589003077984-894e133dabab?w=600', alt: 'Smart Speaker', isPrimary: true }
@@ -128,6 +136,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.7,
     reviewCount: 3421,
+    stockQuantity: 27,
     inStock: true,
     sku: 'SS-003',
     featured: true,
@@ -137,7 +146,9 @@ export const mockProducts: Product[] = [
   {
     id: 4,
     name: 'Leather Backpack',
+    nameAr: 'حقيبة ظهر جلدية',
     description: 'Handcrafted Italian leather backpack with laptop compartment, perfect for daily commute and travel.',
+    descriptionAr: 'حقيبة ظهر مصنوعة يدوياً من الجلد الإيطالي، تحتوي على جيب للحاسوب المحمول ومثالية للتنقل والسفر.',
     price: 249.99,
     compareAtPrice: 299.99,
     images: [
@@ -158,6 +169,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.6,
     reviewCount: 892,
+    stockQuantity: 12,
     inStock: true,
     sku: 'LB-004',
     featured: true,
@@ -167,7 +179,9 @@ export const mockProducts: Product[] = [
   {
     id: 5,
     name: 'Silk Scarf Collection',
+    nameAr: 'مجموعة أوشحة حريرية',
     description: '100% pure silk scarf with hand-painted designs. Each piece is unique and crafted by artisans.',
+    descriptionAr: 'وشاح من الحرير الخالص بنسبة 100% بتصاميم مرسومة يدوياً. كل قطعة فريدة من نوعها وصُنعت على يد حرفيين.',
     price: 89.99,
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600', alt: 'Silk Scarf', isPrimary: true }
@@ -187,6 +201,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.5,
     reviewCount: 456,
+    stockQuantity: 35,
     inStock: true,
     sku: 'SC-005',
     featured: false,
@@ -196,7 +211,9 @@ export const mockProducts: Product[] = [
   {
     id: 6,
     name: 'Ceramic Tea Set',
+    nameAr: 'طقم شاي من السيراميك',
     description: 'Hand-thrown ceramic tea set with 6 cups and teapot. Microwave and dishwasher safe.',
+    descriptionAr: 'طقم شاي من السيراميك مصنوع يدوياً، يتضمن 6 أكواب وإبريق شاي، وآمن للاستخدام في الميكروويف وغسالة الصحون.',
     price: 129.99,
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600', alt: 'Ceramic Tea Set', isPrimary: true }
@@ -206,6 +223,7 @@ export const mockProducts: Product[] = [
     variants: [],
     rating: 4.8,
     reviewCount: 234,
+    stockQuantity: 9,
     inStock: true,
     sku: 'CTS-006',
     featured: true,
@@ -215,7 +233,9 @@ export const mockProducts: Product[] = [
   {
     id: 7,
     name: 'Organic Face Serum',
+    nameAr: 'مصل وجه عضوي',
     description: 'Vitamin C and hyaluronic acid serum for radiant, youthful skin. 100% organic ingredients.',
+    descriptionAr: 'مصل يحتوي على فيتامين C وحمض الهيالورونيك لبشرة مشرقة وشابة، بمكونات عضوية 100%.',
     price: 59.99,
     compareAtPrice: 79.99,
     images: [
@@ -226,6 +246,7 @@ export const mockProducts: Product[] = [
     variants: [],
     rating: 4.7,
     reviewCount: 1567,
+    stockQuantity: 24,
     inStock: true,
     sku: 'OFS-007',
     featured: false,
@@ -235,7 +256,9 @@ export const mockProducts: Product[] = [
   {
     id: 8,
     name: 'Yoga Mat Premium',
+    nameAr: 'حصيرة يوغا فاخرة',
     description: 'Extra thick, non-slip yoga mat with alignment lines. Eco-friendly TPE material.',
+    descriptionAr: 'حصيرة يوغا سميكة للغاية ومضادة للانزلاق مع خطوط للمحاذاة، مصنوعة من مادة TPE صديقة للبيئة.',
     price: 79.99,
     images: [
       { id: 1, url: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=600', alt: 'Yoga Mat', isPrimary: true }
@@ -255,6 +278,7 @@ export const mockProducts: Product[] = [
     ],
     rating: 4.6,
     reviewCount: 987,
+    stockQuantity: 31,
     inStock: true,
     sku: 'YMP-008',
     featured: false,
