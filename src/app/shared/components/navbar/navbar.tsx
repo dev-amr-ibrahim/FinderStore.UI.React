@@ -173,6 +173,7 @@ export function Navbar() {
                       <p className="truncate text-sm font-medium text-gray-900 dark:text-white">{userName()}</p>
                       <p className="truncate text-xs text-gray-500 dark:text-gray-400">{authService.getCurrentUser()?.email}</p>
                     </div>
+                    <Link to="/admin" onClick={closeUserMenu} role="menuitem" className="user-menu-item flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 dark:text-gray-200">Admin dashboard</Link>
                     <Link to="/profile" onClick={closeUserMenu} role="menuitem" className="user-menu-item flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 dark:text-gray-200">Profile</Link>
                     <Link to="/settings" onClick={closeUserMenu} role="menuitem" className="user-menu-item flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 dark:text-gray-200">Settings</Link>
                     <div className="my-1 border-t border-gray-100 dark:border-gray-700"></div>

@@ -27,22 +27,26 @@ export function ProductList() {
     }
   }, [categoryId]);
 
-  const loadAllProducts = () => {
-    productService.getProducts().subscribe({
-      next: (prods: Product[]) => setProducts(prods),
-    });
+  const loadAllProducts = async () => {
+    try {
+      const products = await productService.getProducts();
+      setProducts(products);
+    } catch (error) {
+      console.error('Failed to load products:', error);
+      setProducts([]);
+    }
   };
 
-  const loadProductsByCategory = (catId: string) => {
-    productService.getProducts().subscribe({
-      next: (prods: Product[]) => {
-        const filtered = prods.filter((p: Product) => p.category.id === catId);
-        setProducts(filtered);
-        if (filtered.length > 0) {
-          setCategoryName(filtered[0].category.name);
-        }
-      },
-    });
+  const loadProductsByCategory = async (catId: string) => {
+    try {
+      const products = await productService.getProducts();
+      const filteredProducts = products.filter(product => product.category.id === catId);
+      setProducts(filteredProducts);
+      setCategoryName(filteredProducts[0]?.category.name || 'All Products');
+    } catch (error) {
+      console.error('Failed to load products by category:', error);
+      setProducts([]);
+    }
   };
 
   const sortProducts = (event: React.ChangeEvent<HTMLSelectElement>) => {
