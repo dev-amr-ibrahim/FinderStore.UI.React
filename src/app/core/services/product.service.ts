@@ -5,11 +5,16 @@ import { mockProducts, mockCategories } from '../../data/mock-data';
 import { ApiConstants } from '../constants/api.constants';
 import { apiService } from './api.service';
 import type { CreateProductRequest } from '../../../models/CreateProductRequest';
+import type { ProductFormData } from '../../features/products/product-form/product-form';
 
 export class ProductService {
 
-  getProducts(params?: any): Observable<Product[]> {
-    return of(mockProducts).pipe(delay(500));
+  getProducts(params?: any): Promise<Product[]> {
+     return apiService.get<Product[]>(ApiConstants.Products, params);
+  }
+
+  getProductForAdmin(id: string): Promise<Product> {
+    return apiService.get<Product>(`${ApiConstants.Products}/${id}`);
   }
 
   getProduct(id: number): Observable<Product | undefined> {
@@ -38,19 +43,35 @@ export class ProductService {
   }
 
   async createProduct(request: CreateProductRequest) {
+    const formData = this.toFormData(request);
+    return apiService.post(ApiConstants.createProduct, formData, {
+        headers: { 'Accept': 'application/json' }
+    });
+  }
+
+  async updateProduct(id: number, request: ProductFormData) {
+    const formData = this.toFormData(request);
+    return apiService.put(`${ApiConstants.updateProduct}/${id}`, formData, {
+      headers: { 'Accept': 'application/json' }
+    });
+  }
+
+  private toFormData(request: CreateProductRequest | ProductFormData) {
     const formData = new FormData();
     formData.append('Name', request.name);
     formData.append('NameAr', request.nameAr);
     formData.append('Description', request.description);
     formData.append('DescriptionAr', request.descriptionAr);
     formData.append('Price', request.price.toString());
+    formData.append('UpdatedBy', 'admin');
+
     if (request.compareAtPrice) {
       formData.append('CompareAtPrice', request.compareAtPrice.toString());
     }
     formData.append('Sku', request.sku);
     formData.append('StockQuantity', request.stockQuantity.toString());
     formData.append('CategoryId', request.categoryId);
-    formData.append('CreatedBy', request.createdBy);
+    if ('createdBy' in request) formData.append('CreatedBy', request.createdBy);
 
     request.productImages.forEach((image, index) => {
       formData.append(`ProductImages[${index}].File`, image.file);
@@ -61,8 +82,6 @@ export class ProductService {
       formData.append(`ProductImages[${index}].IsPrimary`, image.isPrimary.toString());
     });
 
-    return apiService.post(ApiConstants.createProduct, formData, {
-        headers: { 'Accept': 'application/json' }
-    });
+    return formData;
   }
 }

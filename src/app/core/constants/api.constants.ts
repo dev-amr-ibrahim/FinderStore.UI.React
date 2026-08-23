@@ -11,4 +11,8 @@ export const ApiConstants = {
     Logout: 'auth/logout',
     Products: 'products',
     createProduct: 'admin/products',
+    updateProduct: 'admin/products',
+    createCategory: 'admin/catalog/categories',
+    getCategoriesListLite: 'admin/catalog/categoriesLite',
+    getCategories: 'admin/catalog/categories',
 } as const;
