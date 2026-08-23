@@ -1,9 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from './app/layouts/main-layout/main-layout';
+import { AdminLayout } from './app/layouts/admin-layout/admin-layout';
 import { AuthLayout } from './app/layouts/auth-layout/auth-layout';
 import { Home } from './app/features/home/home';
 import { ProductList } from './app/features/products/product-list/product-list';
 import { ProductDetail } from './app/features/products/product-detail/product-detail';
+import { CreateProduct } from './app/features/products/create-product/create-product';
+import { EditProduct } from './app/features/products/edit-product/edit-product';
+import { CreateCategory } from './app/features/categories/create-category/create-category';
+import { AdminDashboard } from './app/features/admin/admin-dashboard';
+import { ManageProducts } from './app/features/admin/manage-products';
+import { ManageCategories } from './app/features/admin/manage-categories';
 import { Categories } from './app/features/categories/categories';
 import { Cart } from './app/features/cart/cart';
 import { Checkout } from './app/features/checkout/checkout';
@@ -30,6 +37,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<ProductList />} />
+          <Route path="products/create" element={<Navigate to="/admin/products/new" replace />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="categories" element={<Categories />} />
           <Route path="categories/:id" element={<ProductList />} />
@@ -50,6 +58,14 @@ function App() {
           <Route path="privacy-policy" element={<InformationPage />} />
           <Route path="terms-of-service" element={<InformationPage />} />
           <Route path="cookie-policy" element={<InformationPage />} />
+        </Route>
+        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="products" element={<ManageProducts />} />
+          <Route path="products/new" element={<CreateProduct />} />
+          <Route path="products/:id" element={<EditProduct />} />
+          <Route path="categories" element={<ManageCategories />} />
+          <Route path="categories/new" element={<CreateCategory />} />
         </Route>
         <Route path="/account" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />

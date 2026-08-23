@@ -1,7 +1,9 @@
 export interface Product {
   id: number;
   name: string;
+  nameAr: string;
   description: string;
+  descriptionAr: string;
   price: number;
   compareAtPrice?: number;
   images: ProductImage[];
@@ -10,6 +12,7 @@ export interface Product {
   variants: ProductVariant[];
   rating: number;
   reviewCount: number;
+  stockQuantity: number;
   inStock: boolean;
   sku: string;
   featured?: boolean;
@@ -21,6 +24,7 @@ export interface ProductImage {
   id: number;
   url: string;
   alt: string;
+  altAr?: string;
   isPrimary: boolean;
 }
 
@@ -38,12 +42,12 @@ export interface VariantOption {
 }
 
 export interface Category {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   description: string;
   image: string;
-  parentId?: number;
+  parentId?: string;
   children?: Category[];
 }
 

@@ -6,8 +6,8 @@ import { Storage } from "../../utils/storage";
          (config: InternalAxiosRequestConfig) => {
              const token = Storage.getToken();
              if (token) {
-                 config.headers["Authorization"] = `Bearer ${token}`;
-            }
+                 config.headers.set('Authorization', `Bearer ${token}`);
+             }
              return config;
          }
      );
